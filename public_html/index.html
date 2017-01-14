@@ -43,6 +43,12 @@ and open the template in the editor.
             #startButton{
                 color: green;
             }
+            
+            #error_msg {
+                color:red;
+                padding-top: 50px;
+                font-weight: bold;
+            }
         </style>
     </head>
     <body>
@@ -71,11 +77,12 @@ and open the template in the editor.
                             <div class="form-group">
                                 <label>Radius</label>
                                 <input type="text" id="radius1" class="form-control">
-                            </div>
-                            <div class="form-group colorpicker-component " data-formate="alias">
-                                <label>Color(hex)</label>
-                                <input type="text" id="color1" class="form-control sample-selector">
-                            </div>
+                            </div>                      
+                              <label>Color</label>
+                            <div id="cp1" data-format="alias" class="input-group colorpicker-component"> 
+                                <input type="text" value="primary" class="form-control" id="color1" /> 
+                                <span class="input-group-addon"><i></i></span> 
+                            </div> 
                             <div class="form-group">
                                 <label>Start X</label>
                                 <input type="text" id="startposx1" class="form-control">
@@ -95,17 +102,17 @@ and open the template in the editor.
                         </form>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="second_ball">
-                        <h3>Second Ball</h3>
-                        
+                        <h3>Second Ball</h3>      
                         <form>
                             <div class="form-group">
                                 <label>Radius</label>
                                 <input type="text" id="radius2" class="form-control">
                             </div>
-                            <div class="form-group">
-                                <label>Color(hex)</label>
-                                <input type="text" id="color2" class="form-control sample-selector">
-                            </div>
+                           <label>Color</label>
+                            <div id="cp2" data-format="alias" class="input-group colorpicker-component"> 
+                                <input type="text" value="primary" class="form-control" id="color2"/> 
+                                <span class="input-group-addon"><i></i></span> 
+                            </div> 
                             <div class="form-group">
                                 <label>Start X</label>
                                 <input type="text" id="startposx2" class="form-control">
@@ -139,25 +146,46 @@ and open the template in the editor.
                                         </div>
                     <button id="startButton" onclick="startGame()">Start Game</button>
                     <button id="stopButton" onclick="stopGame()">Stop Game</button>
+                    
+                    <div id="error_msg"></div>
                 </div> 
             </div>
             
-            <script>
-                $('.sample-selector').colorpicker({
-                     colorSelectors: { 
-                         'black': '#000000', 
-                         'white': '#ffffff', 
-                         'red': '#FF0000', 
-                         'default': '#777777', 
-                         'primary': '#337ab7', 
-                         'success': '#5cb85c', 
-                         'info': '#5bc0de', 
-                         'warning': '#f0ad4e', 
-                         'danger': '#d9534f' 
-                     }
-                });
-            </script>
-
+        
+        <script> 
+            $(function() { 
+                $('#cp1').colorpicker({ 
+                    colorSelectors: { 
+                        'dark': '#000000', 
+                        'flasbang': '#ffffff', 
+                        'fire': '#FF0000', 
+                        'grey': '#777777', 
+                        'water': '#337ab7', 
+                        'grass': '#5cb85c', 
+                        'sky': '#5bc0de', 
+                        'mandarin': '#f0ad4e', 
+                        'brick': '#d9534f' } 
+                }); 
+            }); 
+        </script>
+        
+        <script> 
+            $(function() { 
+                $('#cp2').colorpicker({ 
+                    colorSelectors: { 
+                        'dark': '#000000', 
+                        'flasbang': '#ffffff', 
+                        'fire': '#FF0000', 
+                        'grey': '#777777', 
+                        'water': '#337ab7', 
+                        'grass': '#5cb85c', 
+                        'sky': '#5bc0de', 
+                        'mandarin': '#f0ad4e', 
+                        'brick': '#d9534f' } 
+                }); 
+            }); 
+        </script>
+            
             <script src="js/mygamearea.js"></script>
             <script src="js/startgame.js"></script>
             <script src="js/stopgame.js"></script>

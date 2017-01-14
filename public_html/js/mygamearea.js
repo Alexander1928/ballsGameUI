@@ -1,7 +1,3 @@
-/* 
- [Insert license here]
- */
-
 var myGameArea = {
     canvas: document.getElementById("gameArea"),
     start: function (width, height) {

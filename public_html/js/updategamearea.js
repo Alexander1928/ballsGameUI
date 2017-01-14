@@ -39,7 +39,7 @@ function updateGameArea() {
             firstBall.x += firstBall.speedX;
             secondBall.x += secondBall.speedX;
             firstBall.y += firstBall.speedY;
-            secondBall.y += firstBall.speedY;
+            secondBall.y += secondBall.speedY;
 
 
 
